@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import getUsers from './api/getUsers';
 
 function App() {
+
+  useEffect(() => {
+    getUsers();
+  }, [])
+
   return (
     <div className="App">
       <header className="App-header">
@@ -16,7 +22,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Hello World
         </a>
       </header>
     </div>
