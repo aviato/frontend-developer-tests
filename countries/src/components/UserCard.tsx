@@ -32,7 +32,9 @@ const UserCard: React.FC<Props> = ({ user }) => {
           <Typography component="p">
             <RoomIcon /> {user.location.city}, {user.location.state}
           </Typography>
-          <Typography component="p">{user.registered.date}</Typography>
+          <Typography component="p">
+            Registered: { (new Date(user.registered.date)).toLocaleString()}
+            </Typography>
         </Box>
       </CardContent>
     </Card>
