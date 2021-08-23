@@ -1,5 +1,9 @@
 # Frontend Engineering Problem
 
+I tried to make a decent UX but it's honestly not great. I think this is a good place to stop for now. If I have more time I'll improve it a bit more!
+
+Remember to install dependencies with `yarn`
+
 ## API:
 
 ```
