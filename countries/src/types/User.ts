@@ -5,7 +5,7 @@ interface Name {
 }
 
 interface Street {
-  number: number,
+  number: number;
   name: string;
 }
 
@@ -14,7 +14,7 @@ interface LatLng {
   longitude: string;
 }
 
-interface TimeZone { 
+interface TimeZone {
   offset: string;
   description: string;
 }
@@ -41,7 +41,7 @@ interface Login {
 
 interface CreatedAt {
   date: string;
-  age: number
+  age: number;
 }
 
 interface UserId {
@@ -54,8 +54,6 @@ interface ProfilePicture {
   medium: string;
   thumbnail: string;
 }
-
-
 
 export default interface User {
   gender: string;

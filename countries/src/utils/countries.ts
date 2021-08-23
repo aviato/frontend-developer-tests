@@ -4,12 +4,12 @@ import User from "../types/User";
 export function listUsersByCountry(users: User[]): Map<string, User[]> {
   const countries: Map<string, User[]> = new Map([]);
 
-  users.forEach(user => {
+  users.forEach((user) => {
     const country = user.location.country;
-    const usersByCountry = countries.get(country)
+    const usersByCountry = countries.get(country);
 
     if (usersByCountry) {
-      usersByCountry.push(user)
+      usersByCountry.push(user);
     } else {
       countries.set(country, [user]);
     }
@@ -18,16 +18,18 @@ export function listUsersByCountry(users: User[]): Map<string, User[]> {
   return countries;
 }
 
-export function getSortedCountries(users: User[], sortType: 'asc'|'desc') {
+export function getSortedCountries(users: User[], sortType: "asc" | "desc") {
   const countries = listUsersByCountry(users);
 
-  return new Map([...countries.entries()].sort((a, b) => {
-    if (sortType === 'asc') {
-      return a[1].length - b[1].length;
-    } else {
-      return b[1].length - a[1].length;
-    }
-  }))
+  return new Map(
+    [...countries.entries()].sort((a, b) => {
+      if (sortType === "asc") {
+        return a[1].length - b[1].length;
+      } else {
+        return b[1].length - a[1].length;
+      }
+    })
+  );
 }
 
 export function getFlatCountriesList(countries: Map<string, User[]>) {
