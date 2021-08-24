@@ -1,7 +1,10 @@
-export default async function getUsers(numberOfResults: number = 100): Promise<any> {
+import User from "../types/User";
+
+export default async function getUsers(numberOfResults: number = 100) {
   try {
     const res = await fetch(`https://randomuser.me/api/?results=${numberOfResults}`);
-    return await res.json();
+    const json = await res.json();
+    return json.results;
   } catch (e) {
     console.trace(e);
   }
